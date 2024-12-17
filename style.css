@@ -8,8 +8,45 @@ body {
 }
 
 html, body {
-    height: 100%;
+    overflow-x: hidden;
+    width: calc(100%);
 }
+/* 滚动条整体 */
+::-webkit-scrollbar {
+    width: 12px; /* 宽度（垂直滚动条） */
+    height: 12px; /* 高度（水平滚动条） */
+}
+
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+    background: #888; /* 颜色 */
+    border-radius: 6px; /* 圆角 */
+}
+
+/* 滚动条滑块鼠标悬停效果 */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* 滚动条轨道 */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* 轨道背景色 */
+    border-radius: 6px;
+}
+
+/* 滚动条轨道边界 */
+::-webkit-scrollbar-track-piece {
+    background: #e1e1e1;
+}
+/* 滚动容器样式 */
+.scroll-container {
+    position: relative; /* 保证滚动条的 z-index 作用 */
+    overflow-y: scroll; /* 启用滚动 */
+    z-index: 999; /* 滚动条容器的 z-index */
+    height: 100vh; /* 根据需求设置滚动区域高度 */
+}
+
+
 
 .sidebar {
     width: 250px;

@@ -1,0 +1,312 @@
+/* 通用样式 */
+.topbar {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    height: 150px;
+    width: calc(100vw - 12px);
+    z-index: 998;
+    display: flex;
+    flex-direction: column;
+    background-color: #fdfeff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: height 0.3s ease;
+}
+
+/* 初始状态高度 */
+.topbar.full {
+    height: 150px; /* 包含 header 和菜单 */
+}
+
+/* 缩减状态高度 */
+.topbar.shrink {
+    height: 50px; /* 仅保留菜单 */
+}
+
+/* topbar-header 隐藏动画 */
+.topbar.shrink .topbar-header {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+}
+
+/* topbar-header 默认状态 */
+.topbar-header {
+    display: flex;
+    height: 100px;
+    align-items: start;
+    padding-top: 10px;
+    padding-left: 10px;
+    transition: transform 0.3s ease;
+}
+.topbar-header .header-right {
+    height: 80px;
+    margin-left: 15px;
+    align-content: center;
+    align-items: center;
+}
+
+.topbar-header p{
+    font-size: 10px;
+    margin: 0px;
+}
+
+.topbar-header h2{
+    margin: 5px;
+    margin-left: 0px;
+    font-size: 20px;
+}
+
+.avatar-mo {
+    height: 80px;
+    width: 80px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 3px solid #007BFF;
+}
+
+.avatar-mo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* 菜单栏固定显示 */
+.menu-mo {
+    position: absolute; /* 确保菜单栏独立控制位置 */
+    bottom: 0;
+    left: 0;
+    height: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 10px 0;
+    list-style: none;
+    background-color: #f8f8f8;
+    border-top: 1px solid #ddd;
+}
+
+.menu-mo li {
+    align-items: center;
+
+    height: 25px;
+    margin: 0 5px;
+}
+
+.menu-mo li a {
+    text-decoration: none;
+    color: #007BFF;
+    font-size: 10px;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #494141;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.menu-mo li a:hover {
+    color: #007BFF;
+}
+
+
+.topbar li a:hover,
+.topbar li a:focus {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+.topbar li a.active {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+.topbar p a {
+    text-decoration: none;
+    color: #007BFF;
+    font-size: 5px;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+.main-wrapper-mo{
+    width: 100vw;
+    padding: 0px;
+    margin-top: 170px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.main-wrapper-mo.full{
+    width: 100vw;
+    margin-top: 50px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.main-wrapper-mo.shrink{
+    width: 100vw;
+    background-color: #f8f8f8;
+    margin-top: 170px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.main-content-mo {
+    flex: 1;
+    width: calc(100vw);
+}
+
+/* 缩进效果的样式 */
+.section-mo .content-container-mo {
+    padding-left: 20px; /* 控制缩进距离 */
+    padding-right: 5px;
+    margin-top: 10px; /* 调整与标题的间距 */
+}
+
+.header-mo {
+    text-align: center;
+    width: calc(100%);
+    padding-top: 0;
+    border-bottom: 2px solid #333;
+}
+
+.header-mo{
+    background-image: url("./dgmingzi.png"); /* 背景图片地址 */
+    background-size: cover; /* 图片适应容器大小 */
+    background-position: center; /* 图片居中显示 */
+    background-repeat: no-repeat; /* 禁止背景重复 */
+    height: 200px; /* 设置高度，可根据需要调整 */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 内容垂直居中 */
+    align-items: center; /* 内容水平居中 */
+    color: #fff; /* 设置前景文字颜色为白色，提升对比度 */
+    text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.7); /* 增加文字阴影提升可读性 */
+}
+
+
+.logo-container-mo {
+    top: 5px; 
+    right: 5px;
+}
+
+.logo-container-mo .logo {
+    width: 120px; /* 徽标宽度 */
+    height: auto; /* 保持徽标比例 */
+}
+
+
+.header-mo h1 {
+    font-size: 2rem;
+    margin: 0;
+    color: #ffffff;
+}
+
+.header-mo p {
+    width: 100%;
+    font-size: 1rem;
+    color: #beb7b7;
+    margin: 0;
+}
+
+.section-mo {
+    margin-top: 0px;
+    padding-top: 50px;
+    padding: 10px;
+    width: calc(100% - 20px);
+}
+
+.section-mo h2{
+    margin-top: 50px;
+}
+
+
+#students-mo{
+    height: 100vh;
+}
+
+
+.section-mo:last-child {
+    border-bottom: none;
+}
+
+.section-mo h2 {
+    color: #222;
+    font-size: 2.5rem;
+    border-bottom: 2px solid #007BFF;
+    padding-bottom: 5px;
+}
+.section-mo h3 {
+    color: #716c6c;
+    font-size: 2.1rem;
+    margin-bottom: 0;
+    padding-bottom: 5px;
+    font-size: 25px;
+}
+.section-mo h4 {
+    color: #000000;
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 20px;
+}
+
+.section-mo p {
+    margin: 10px 0;
+    margin-top: 0;
+    text-align: justify;
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.section-mo ul {
+    list-style: none;
+    margin-top: 0;
+    padding: 0;
+}
+
+.section-mo ul li {
+    position: relative;
+    margin-bottom: 10px; /* 列表项间距 */
+    padding-left:25px; /* 给伪元素留出足够空间 */
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.footer-mo {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+}
+
+
+.main-content-mo .awards-ul li::before ,
+.main-content-mo .roles li::before,
+.main-content-mo .multi_fusion li::before,
+.main-content-mo .medical li::before,
+.main-content-mo .industrial li::before,
+.main-content-mo .crossmodal li::before {
+    content: ""; /* 伪元素内容为空 */
+    position: absolute;
+    left: 0; /* 将伪元素放在 li 的最左侧 */
+    top: 50%; /* 垂直居中 */
+    transform: translateY(-50%); /* 确保居中 */
+    width: 10px; /* 圆形标记直径 */
+    height: 10px; /* 圆形标记直径 */
+    background-color: #007BFF; /* 圆形标记颜色 */
+    border-radius: 50%; /* 圆形 */
+}
+
+.section ul li {
+    position: relative;
+    margin-bottom: 10px; /* 列表项间距 */
+    padding-left:25px; /* 给伪元素留出足够空间 */
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
